@@ -1,0 +1,36 @@
+1/7/93
+
+Here is my port of BSD C Shell (ver 5.26) from the 386BSD source tree.  
+It works well for me, but as this is a first release so your milage may vary.  
+While this csh may lack some of the bells and wistles you have come to 
+expect from bash or tcsh, it has some advantages:
+
+- Good man page included. (I wish bash had this)
+- It works. (I wish my tcsh did)
+- About as "standard" a csh as you can get.  Any decent introduction to Unix 
+  book has a section devoted to the C shell.
+- Weighs in at only 95k.
+
+If you wish to compile the source, you will need gcc 2.3.3 and the new 
+4.2 libraries.  (It will compile with gcc 2.2.2d but core dumps on execution).
+This release has only been tested with Linux 0.99.2, but should work okay 
+with 0.97.3 and above.  It probably requires the 4.2 shared libraries
+to run.
+
+If you have any problems that you can isolate, please feel free to contact 
+me.  Better still, if you know something about BSD and SysV (POSIX?) 
+signals, please take a look at the diffs and let me know if my changes
+make sense.  The code was compiled with __USE_BSD_SIGNAL, but other changes
+had to be made, particularly having to do with the wait3 system call.  Also, 
+a couple of changes were made to glob.c that I am not entirely happy with, 
+so if you run into problems with csh not globbing correctly, let me know.
+
+Finally, I am interested in porting the "latest" version of csh to Linux 
+(I have 5.34 dated 2/5/92).  In particular, if you know anything about 
+"vis.h", please contact me.  I cannot find any information on it.
+
+Enjoy!
+
+Ken Clark
+ken@trog.biol.sfu.ca (which forwards mail to) rchen@fraser.sfu.ca
+
